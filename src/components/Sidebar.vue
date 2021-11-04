@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="sidebar">
       <div class="sidebar-background">
           <img src="@/assets/onboard.png" alt="onboarding">
       </div>
@@ -14,6 +14,10 @@ export default {
 </script>
 
 <style scoped>
+.sidebar {
+    height: 100%;
+    background: #F3E8C9;
+}
 .sidebar-background {
     background: #F3E8C9;
     min-height: 100vh;

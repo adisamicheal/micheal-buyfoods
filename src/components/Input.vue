@@ -85,4 +85,16 @@ input::-ms-value{
     color: #7D8DA7;
 }
 
+/* remove input type number increment and decremnt counter */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 </style>
