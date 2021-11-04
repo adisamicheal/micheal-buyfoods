@@ -10,11 +10,11 @@
       </div>
       <div class="bank-verification">
         <div class="bank-inputs" v-if="showBankInputs">
-            <Input class="bank-input" label="Account Number" type="text" @keypress="onlyNumber"/>
-            <Input class="bank-input" label="Select Bank" type="text"/>
+            <Input class="bank-input" label="Account Number" type="number"/>
+            <Select class="bank-input" :values="values" label="Select Bank" />
         </div>
         <div v-else>
-            <Input label="Bank Verification Number (11-digits)" type="text" @keypress="onlyNumber"/>
+            <Input label="Bank Verification Number (11-digits)" type="number" maxlength="11"/>
             <Accordion />
         </div>
         <hr class="hr-out">
@@ -26,6 +26,7 @@
 <script>
 import Heading from '@/components/Heading.vue'
 import Input from '@/components/Input.vue'
+import Select from '@/components/Select.vue'
 import Accordion from '@/components/Accordion.vue'
 import Button from '@/components/Button.vue'
 
@@ -34,17 +35,28 @@ export default {
     components: {
         Heading,
         Input,
+        Select,
         Accordion,
-         Button
+        Button
     },
     props: [ 'steps' ],
     data() {
         return {
-            showBankInputs: false
+            showBankInputs: false,
+            values: [
+                ' ',
+                'Wema',
+                'Heritage Bank',
+                'Zenith Bank',
+                'GT Bank',
+                'United Bank for Africa',
+                'FCMB'
+            ]
         }
     },
     methods: {
     onlyNumber($event) {
+        console.log('something here');
       let keyCode = ($event.keyCode ? $event.keyCode : $event.which);
       if (((keyCode < 48 || keyCode > 57) && keyCode !== 46) || keyCode === 173) { // 46 is dot
         $event.preventDefault();

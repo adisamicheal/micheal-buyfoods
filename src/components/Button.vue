@@ -24,6 +24,7 @@ export default {
     },
     methods: {
         handleClick() {
+            // emit click event to parent component 
             this.$emit('click')
         }
     }

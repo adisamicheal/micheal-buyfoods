@@ -1,7 +1,7 @@
 <template>
 <div class="form-input">
   <label class="label" :for="label">{{ label }}</label>
-  <input class="input" :class="classes" :type="type" :placeholder="placeholder">
+  <input class="input" :class="classes" :type="type" :placeholder="placeholder" :value="value" :maxlength="maxlength" :pattern="pattern">
 </div>
 </template>
 
@@ -21,13 +21,21 @@ export default {
             type: String,
             default: ''
         },
-        // input: {
-        //    type: String,
-        //     default: '' 
-        // },
+        value: {
+           type: String,
+            default: '' 
+        },
         label: {
            type: String,
             default: '' 
+        },
+        maxlength: {
+            type: String,
+            default: ''
+        },
+        pattern: {
+            type: String,
+            default: ''
         }
     },
     computed: {
@@ -65,6 +73,12 @@ export default {
 }
 .error {
     border: 1px solid red;
+}
+input::-ms-value{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    color: #7D8DA7;
 }
 
 </style>

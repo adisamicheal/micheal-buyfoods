@@ -6,8 +6,8 @@
         <Input class="handle-input" label="Choose your Abeg Tag (required)" type="text"/>
     </div>
     <div class="social-inputs">
-        <Input class="handle-input" label="Instagram" type="text"/>
-        <Input class="handle-input" label="Twitter" type="text"/>
+        <Input class="handle-input" label="Instagram" type="text" value="@"/>
+        <Input class="handle-input" label="Twitter" type="text" value="@"/>
     </div>
     <hr>
     <Button @click="submit" class="btn__regular button">Confirm Social Handles</Button>

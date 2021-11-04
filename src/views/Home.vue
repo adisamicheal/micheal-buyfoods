@@ -6,11 +6,13 @@
    <div class="onboarding">
       <Button class="btn__danger button">Logout</Button>
      <div class="step-bar-wrapper">
+       <!-- imoport step tab for larger screen -->
        <StepHeading @submit="steps = 1" :steps="steps" class="step-bar"  stepNumber="1" step="Verify Account"/>
        <StepHeading @submit="steps = 2" :steps="steps" class="step-bar" stepNumber="2" step="Social Handles"/>
        <StepHeading @submit="steps = 3" :steps="steps" stepNumber="3" step="Business Category"/>
      </div>
      <div class="step-bar-wrapper-mobile">
+       <!-- imoport step tab for small screen -->
        <StepHeading v-if="steps === 1" @submit="steps = 1" :steps="steps" class="step-bar"  stepNumber="1" step="Verify Account"/>
        <StepHeading v-if="steps === 2" @submit="steps = 2" :steps="steps" class="step-bar" stepNumber="2" step="Social Handles"/>
        <StepHeading v-if="steps === 3" @submit="steps = 3" :steps="steps" stepNumber="3" step="Business Category"/>
@@ -19,7 +21,8 @@
      <div class="step-heading">
        <p>Step {{ steps }}/3</p>
      </div>
-     <div class="step-componentns">
+     <div class="step-components">
+       <!-- import components to switch tab  -->
        <VerifyAccount :steps="steps" v-if="steps === 1" @submit="increment"/>
        <SocialHandles :steps="steps" v-if="steps === 2" @submit="increment"/>
        <BusinessCategory :steps="steps" v-if="steps === 3" @submit="increment"/>
@@ -36,11 +39,9 @@ import StepHeading from '@/components/StepHeading.vue'
 import VerifyAccount from '@/components/VerifyAccount.vue'
 import SocialHandles from '@/components/SocialHandles.vue'
 import BusinessCategory from '@/components/BusinessCategory.vue'
-// import { Mobile } from '@/mixins/mobile';
 
 export default {
   name: 'Home',
-  // mixins: [Mobile],
   components: {
     Button,
     Sidebar,
@@ -98,7 +99,7 @@ export default {
   line-height: 17px;
   color: #A5B4CB;
 }
-.step-componentns {
+.step-components {
   margin-top: 19px;
 }
 

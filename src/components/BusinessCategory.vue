@@ -2,8 +2,8 @@
   <div class="business-category">
     <Heading heading="Business Category"/>
     <div class="business-inputs">
-        <Input class="business-input" label="Type of your business" type="text"/>
-        <Input class="business-input" label="Business Category" type="text"/>
+        <Select class="business-input" :values="values" label="Type of your business" />
+        <Select class="business-input" :values="values" label="Business Category" />
     </div>
     <div class="pos">
         <p>Do you use POS machines for your business?</p>
@@ -20,19 +20,28 @@
 
 <script>
 import Heading from '@/components/Heading.vue'
-import Input from '@/components/Input.vue'
+import Select from '@/components/Select.vue'
 import Button from '@/components/Button.vue'
 
 export default {
     name: "BusinessCategory",
     components: {
         Heading,
-        Input,
+        Select,
         Button
     },
     data() {
         return {
-            active: false
+            active: false,
+            values: [
+                ' ',
+                'One',
+                'Two',
+                'Three',
+                'Four',
+                'Five',
+                'Six'
+            ]
         }
     },
     methods: {
@@ -55,7 +64,6 @@ export default {
 .business-inputs {
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    /* width: 100%; */
     grid-column-gap: 40px;
     margin-top: 44px;
 }
