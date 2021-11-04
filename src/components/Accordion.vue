@@ -123,11 +123,15 @@ export default {
     font-size: 11px;
     line-height: 14px;
     color: #141737;
+    padding-left: 30px;
     /* transition: all 0.35s; */
     /* transform: rotate(135deg); */
 }
 .accordion-content p {
     margin-bottom: 11px;
+}
+.accordion-content p span {
+    margin-left: 5px;
 }
 .accordion-content ul {
     list-style: none;
