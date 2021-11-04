@@ -15,7 +15,11 @@
        <!-- imoport step tab for small screen -->
        <StepHeading v-if="steps === 1" @submit="steps = 1" :steps="steps" class="step-bar"  stepNumber="1" step="Verify Account"/>
        <StepHeading v-if="steps === 2" @submit="steps = 2" :steps="steps" class="step-bar" stepNumber="2" step="Social Handles"/>
-       <StepHeading v-if="steps === 3" @submit="steps = 3" :steps="steps" stepNumber="3" step="Business Category"/>
+       <StepHeading v-if="steps === 3" @submit="steps = 3" :steps="steps" class="step-bar" stepNumber="3" step="Business Category"/>
+       <div class="caret">
+         <span @click="decrement">&#8249;</span>
+         <span @click="increment">&#8250;</span>
+       </div>
      </div>
      <hr class="horizontal-line">
      <div class="step-heading">
@@ -59,6 +63,11 @@ export default {
     increment() {
       if (this.steps < 3) {
         this.steps +=1
+      }
+    },
+    decrement() {
+      if (this.steps > 1) {
+        this.steps -=1
       }
     }
   }
@@ -125,8 +134,20 @@ export default {
   .step-bar-wrapper {
     display: none;
   }
+  .step-bar {
+    margin-right: 20px;
+  }
   .step-bar-wrapper-mobile  {
-    display: block;
+    display: flex;
+    align-items: center;
+  }
+  .caret span {
+    margin-right: 15px;
+    background: #DCEAFF;
+    padding: 0 7px;
+    color: #006AFF;
+    font-size: 20px;
+    cursor: pointer;
   }
 }
 </style>
