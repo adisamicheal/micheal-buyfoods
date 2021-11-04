@@ -59,6 +59,10 @@ export default {
     border-radius: 12px;
     height: 54px;
     padding: 0 20px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    color: #7D8DA7;
 }
 .input:focus {
     border: 1px solid #006AFF;
